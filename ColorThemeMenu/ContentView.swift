@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var dataSource: DataSource
+    
     var body: some View {
         ZStack {
-            Color(#colorLiteral(red: 0.1872259974, green: 0.2888302505, blue: 0.814283669, alpha: 1))
+            dataSource.selectedTheme.backgroundColor
                 .ignoresSafeArea()
             
             ScrollView(.vertical, showsIndicators: false, content: {
@@ -25,7 +27,7 @@ struct ContentView: View {
                     SaleshouseView()
                         .padding(.horizontal)
                         .padding(.vertical, 20)
-                        .background(Color.white.opacity(0.2))
+                        .background(dataSource.selectedTheme.tertiaryColor)
                         .cornerRadius(8)
                         .padding()
                     
@@ -35,7 +37,7 @@ struct ContentView: View {
                     UsedSpaceView()
                         .foregroundColor(.white)
                         .padding(20)
-                        .background(Color(#colorLiteral(red: 0.1452784836, green: 0.2314804792, blue: 0.6926547885, alpha: 1)))
+                        .background(dataSource.selectedTheme.quaternaryColor)
                         .cornerRadius(8)
                         .padding()
                     
@@ -112,6 +114,7 @@ struct UsedSpaceView: View {
 }
 
 struct MenuView: View {
+    @EnvironmentObject var dataSource: DataSource
     @State var selectedIndex: Int = 0
     @Namespace var namespace
     
@@ -134,7 +137,7 @@ struct MenuView: View {
                 .fontWeight(.bold)
                 .padding(.leading)
                 .padding(.top)
-                .foregroundColor(Color.white.opacity(0.3))
+                .foregroundColor(dataSource.selectedTheme.secondaryColor)
             
             ForEach(4 ..< 7) { i in
                 MenuItemView(item: items[i], selectedIndex: $selectedIndex, index: i, namespace: namespace)
@@ -152,6 +155,7 @@ struct MenuView: View {
 }
 
 struct MenuItemView: View {
+    @EnvironmentObject var dataSource: DataSource
     var item: MenuItem
     @Binding var selectedIndex: Int
     var index: Int
@@ -161,12 +165,12 @@ struct MenuItemView: View {
         HStack {
             Image(systemName: item.image)
                 .font(.system(size: 21))
-                .foregroundColor(selectedIndex == index ? .white : Color("secondary"))
+                .foregroundColor(selectedIndex == index ? dataSource.selectedTheme.primaryColor : dataSource.selectedTheme.tertiaryColor)
             
             Text(item.title)
                 .font(.title2)
                 .fontWeight(.semibold)
-                .foregroundColor(selectedIndex == index ? .white : Color("secondary"))
+                .foregroundColor(selectedIndex == index ? dataSource.selectedTheme.primaryColor : dataSource.selectedTheme.tertiaryColor)
             
             Spacer()
             
@@ -187,7 +191,7 @@ struct MenuItemView: View {
                 if selectedIndex == index {
                     Capsule()
                         .frame(width: 4, height: 40)
-                        .foregroundColor(.white)
+                        .foregroundColor(dataSource.selectedTheme.primaryColor)
                         .matchedGeometryEffect(id: "selector", in: namespace)
                 }
             }
@@ -196,6 +200,8 @@ struct MenuItemView: View {
 }
 
 struct SaleshouseView: View {
+    @EnvironmentObject var dataSource: DataSource
+    
     var body: some View {
         HStack {
             Circle()
@@ -220,10 +226,10 @@ struct SaleshouseView: View {
                 Text("Saleshouse")
                     .font(.title)
                     .fontWeight(.semibold)
-                    .foregroundColor(.white)
+                    .foregroundColor(dataSource.selectedTheme.primaryColor)
                 
                 Text("general team")
-                    .foregroundColor(Color("secondary"))
+                    .foregroundColor(dataSource.selectedTheme.secondaryColor)
             }
             
             Spacer()
@@ -235,12 +241,14 @@ struct SaleshouseView: View {
                 Image(systemName: "chevron.down")
                     .font(.system(size: 17, weight: .bold))
             }
-            .foregroundColor(.white)
+            .foregroundColor(dataSource.selectedTheme.primaryColor)
         }
     }
 }
 
 struct HeaderView: View {
+    @EnvironmentObject var dataSource: DataSource
+    
     var body: some View {
         HStack {
             LogoView()
@@ -250,9 +258,24 @@ struct HeaderView: View {
             Text("Integration")
                 .font(.largeTitle)
                 .fontWeight(.semibold)
-                .foregroundColor(.white)
+                .foregroundColor(dataSource.selectedTheme.primaryColor)
             
             Spacer()
+            
+            VStack(spacing: 8) {
+                ForEach(0..<ThemeManager.themes.count, id: \.self) { theme in
+                    Button(action: {
+                        withAnimation {
+                            dataSource.currentTheme = theme
+                        }
+                    }, label: {
+                        Circle()
+                            .frame(width: 20, height: 20)
+                            .foregroundColor(ThemeManager.getTheme(theme).backgroundColor)
+                            .background(Circle().stroke(Color.gray, lineWidth: 1))
+                    })
+                }
+            }
         }
     }
 }
@@ -288,5 +311,6 @@ struct HorseShoeView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(DataSource())
     }
 }

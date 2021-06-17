@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D2E1439267AB3520036AB14 /* ThemesAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D2E1438267AB3520036AB14 /* ThemesAssets.xcassets */; };
+		3D2E1447267AB99E0036AB14 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2E1446267AB99E0036AB14 /* Theme.swift */; };
+		3D2E1449267AB9DB0036AB14 /* Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2E1448267AB9DB0036AB14 /* Themes.swift */; };
+		3D2E144B267ABA530036AB14 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2E144A267ABA530036AB14 /* ThemeManager.swift */; };
+		3D2E144D267ABA950036AB14 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2E144C267ABA950036AB14 /* DataSource.swift */; };
 		3D5FFDD52678029F0007BCB9 /* ColorThemeMenuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5FFDD42678029F0007BCB9 /* ColorThemeMenuApp.swift */; };
 		3D5FFDD72678029F0007BCB9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5FFDD62678029F0007BCB9 /* ContentView.swift */; };
 		3D5FFDD9267802A50007BCB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D5FFDD8267802A50007BCB9 /* Assets.xcassets */; };
@@ -16,6 +21,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D2E1438267AB3520036AB14 /* ThemesAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ThemesAssets.xcassets; sourceTree = "<group>"; };
+		3D2E1446267AB99E0036AB14 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		3D2E1448267AB9DB0036AB14 /* Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themes.swift; sourceTree = "<group>"; };
+		3D2E144A267ABA530036AB14 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		3D2E144C267ABA950036AB14 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		3D5FFDD12678029F0007BCB9 /* ColorThemeMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorThemeMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D5FFDD42678029F0007BCB9 /* ColorThemeMenuApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorThemeMenuApp.swift; sourceTree = "<group>"; };
 		3D5FFDD62678029F0007BCB9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -37,6 +47,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D2E1437267AB3300036AB14 /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				3D2E1438267AB3520036AB14 /* ThemesAssets.xcassets */,
+				3D2E1446267AB99E0036AB14 /* Theme.swift */,
+				3D2E1448267AB9DB0036AB14 /* Themes.swift */,
+				3D2E144A267ABA530036AB14 /* ThemeManager.swift */,
+				3D2E144C267ABA950036AB14 /* DataSource.swift */,
+			);
+			path = Themes;
+			sourceTree = "<group>";
+		};
 		3D5FFDC82678029E0007BCB9 = {
 			isa = PBXGroup;
 			children = (
@@ -57,6 +79,7 @@
 		3D5FFDD32678029F0007BCB9 /* ColorThemeMenu */ = {
 			isa = PBXGroup;
 			children = (
+				3D2E1437267AB3300036AB14 /* Themes */,
 				3D5FFDE3267818C80007BCB9 /* Model */,
 				3D5FFDD42678029F0007BCB9 /* ColorThemeMenuApp.swift */,
 				3D5FFDD62678029F0007BCB9 /* ContentView.swift */,
@@ -142,6 +165,7 @@
 			files = (
 				3D5FFDE726789B3B0007BCB9 /* README.md in Resources */,
 				3D5FFDDC267802A50007BCB9 /* Preview Assets.xcassets in Resources */,
+				3D2E1439267AB3520036AB14 /* ThemesAssets.xcassets in Resources */,
 				3D5FFDD9267802A50007BCB9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,9 +177,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D2E144D267ABA950036AB14 /* DataSource.swift in Sources */,
 				3D5FFDE5267818D50007BCB9 /* MenuItem.swift in Sources */,
+				3D2E1447267AB99E0036AB14 /* Theme.swift in Sources */,
 				3D5FFDD72678029F0007BCB9 /* ContentView.swift in Sources */,
+				3D2E1449267AB9DB0036AB14 /* Themes.swift in Sources */,
 				3D5FFDD52678029F0007BCB9 /* ColorThemeMenuApp.swift in Sources */,
+				3D2E144B267ABA530036AB14 /* ThemeManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

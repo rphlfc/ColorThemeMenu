@@ -3,11 +3,14 @@ Encontrei esse layout do [Alexey Savitskiy](https://www.instagram.com/alexey_sav
 
 ## Screenshots
 <p align="center">
-    <img src="https://user-images.githubusercontent.com/16376748/122020155-e5dc2680-cd9a-11eb-825b-8fae3d569cc1.png" width="400">
+    <img src="https://user-images.githubusercontent.com/16376748/122358125-ba884180-cf2a-11eb-8229-5f4f55b531f3.png" width="400">
+    <img src="https://user-images.githubusercontent.com/16376748/122358114-b78d5100-cf2a-11eb-97a4-03e36c06bb11.png" width="400">
+    <img src="https://user-images.githubusercontent.com/16376748/122358095-b2300680-cf2a-11eb-9ee9-09149c1ec10e.png" width="400">
 </p>
 
 ## Vídeos
-- [Vídeo no Youtube](https://youtu.be/geHpcuxU2bM)
+- [Vídeo no Youtube - Parte 1](https://youtu.be/geHpcuxU2bM)
+- [Vídeo no Youtube - Parte 2](https://youtu.be/21UNDatuFZ0)
 
 ## Requisitos
 - iOS 14
