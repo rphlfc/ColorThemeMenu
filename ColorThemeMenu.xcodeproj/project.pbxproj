@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,7 @@
 		3D5FFDDC267802A50007BCB9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D5FFDDB267802A50007BCB9 /* Preview Assets.xcassets */; };
 		3D5FFDE5267818D50007BCB9 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5FFDE4267818D50007BCB9 /* MenuItem.swift */; };
 		3D5FFDE726789B3B0007BCB9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3D5FFDE626789B3B0007BCB9 /* README.md */; };
+		3DE958BB267D5E530004947C /* Dracula in Frameworks */ = {isa = PBXBuildFile; productRef = 3DE958BA267D5E530004947C /* Dracula */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DE958BB267D5E530004947C /* Dracula in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,6 +124,9 @@
 			dependencies = (
 			);
 			name = ColorThemeMenu;
+			packageProductDependencies = (
+				3DE958BA267D5E530004947C /* Dracula */,
+			);
 			productName = ColorThemeMenu;
 			productReference = 3D5FFDD12678029F0007BCB9 /* ColorThemeMenu.app */;
 			productType = "com.apple.product-type.application";
@@ -149,6 +154,9 @@
 				Base,
 			);
 			mainGroup = 3D5FFDC82678029E0007BCB9;
+			packageReferences = (
+				3DE958B9267D5E530004947C /* XCRemoteSwiftPackageReference "swiftui" */,
+			);
 			productRefGroup = 3D5FFDD22678029F0007BCB9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -370,6 +378,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3DE958B9267D5E530004947C /* XCRemoteSwiftPackageReference "swiftui" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dracula/swiftui.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3DE958BA267D5E530004947C /* Dracula */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3DE958B9267D5E530004947C /* XCRemoteSwiftPackageReference "swiftui" */;
+			productName = Dracula;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3D5FFDC92678029E0007BCB9 /* Project object */;
 }

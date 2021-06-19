@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Dracula
 
 struct BlueTheme: Theme {
     var backgroundColor: Color = Color("blue-background")
@@ -32,4 +33,13 @@ struct WhiteTheme: Theme {
     var tertiaryColor: Color = Color("white-tertiary")
     var quaternaryColor: Color = Color("white-quaternary")
     var name: String = "White Theme"
+}
+
+struct DraculaTheme: Theme {
+    var backgroundColor: Color = Color.draculaBackground
+    var primaryColor: Color = Color.draculaPurple
+    var secondaryColor: Color = Color.draculaOrange
+    var tertiaryColor: Color = Color.draculaCurrent
+    var quaternaryColor: Color = Color.draculaCurrent
+    var name: String = "Dracula Theme"
 }

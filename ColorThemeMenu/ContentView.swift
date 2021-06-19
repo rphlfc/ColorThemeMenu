@@ -54,6 +54,8 @@ struct ContentView: View {
 }
 
 struct ProfileView: View {
+    @EnvironmentObject var dataSource: DataSource
+    
     var body: some View {
         HStack {
             Image("profile")
@@ -63,7 +65,7 @@ struct ProfileView: View {
             
             Text("Raphael Cerqueira")
                 .font(.title3)
-                .foregroundColor(.white)
+                .foregroundColor(dataSource.selectedTheme.primaryColor)
                 .fontWeight(.semibold)
             
             Spacer()
@@ -76,7 +78,7 @@ struct ProfileView: View {
                     Circle()
                         .frame(width: 6, height: 6)
                 }
-                .foregroundColor(.white)
+                .foregroundColor(dataSource.selectedTheme.primaryColor)
             })
         }
     }

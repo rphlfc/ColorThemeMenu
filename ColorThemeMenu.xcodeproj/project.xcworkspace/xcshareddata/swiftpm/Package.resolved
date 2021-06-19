@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Dracula",
+        "repositoryURL": "https://github.com/dracula/swiftui.git",
+        "state": {
+          "branch": null,
+          "revision": "047a2f5e21fb423a9ca8749389779d86a802355e",
+          "version": "0.1.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
